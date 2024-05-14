@@ -9,7 +9,6 @@ function Validacion() {
     var NotaL = parseInt(document.getElementById("LEN").value);
     var NotaE = parseInt(document.getElementById("EFS").value);
     var valido = true;
-
     document.getElementById("MAT").style.background = (NotaM >= 1 && NotaM <= 10) ? "green" : "red";
     document.getElementById("LEN").style.background = (NotaL >= 1 && NotaL <= 10) ? "green" : "red";
     document.getElementById("EFS").style.background = (NotaE >= 1 && NotaE <= 10) ? "green" : "red";
@@ -29,7 +28,7 @@ function Promedio() {
     var valido = Validacion();
 
     if (!valido) {
-        alert("Notas no válidas (los números deben estar entre 1 y 10)");
+        alert("Notas no válidas (todos los campos deben estar completos con numeros, los números deben estar entre 1 y 10)");
     } else {
         var promedio = (NotaM + NotaL + NotaE) / 3;
         document.getElementById("Resultado").innerHTML = "Promedio: " + promedio;
@@ -46,7 +45,7 @@ function Nota() {
     var valido = Validacion();
 
     if (!valido) {
-        alert("Notas no válidas (los números deben estar entre 1 y 10)");
+        alert("Notas no válidas (todos los campos deben estar completos con numeros, los números deben estar entre 1 y 10)");
     } else {
         var notaMax = Math.max(NotaM, NotaL, NotaE);
         mejoresMaterias(NotaM, NotaL, NotaE, notaMax);
